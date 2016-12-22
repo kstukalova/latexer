@@ -7,7 +7,7 @@ WKSHT = $(MAKECMDGOALS)
 # tbh i have no idea what the following flags do...
 DISC_TEX_FLAGS = -halt-on-error -output-directory ../pdf
 
-all: $(ALL_WKSHT)
+all: $(ALL_WKSHT) $(addsuffix _sol, $(ALL_WKSHT))
 
 # generate the solutions doc (in ../pdf)
 worksheet%_sol: 
