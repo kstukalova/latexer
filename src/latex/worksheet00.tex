@@ -1,0 +1,83 @@
+\documentclass{exam}
+\usepackage{../../scripts/commonheader}
+\usepackage{enumitem}
+\newcommand{\HRule}[1][\medskipamount]{\par
+  \vspace*{\dimexpr-\parskip-\baselineskip+#1}
+  \noindent\rule{\linewidth}{0.2mm}\par}
+%%% Change these %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\discnumber{}
+\title{\textsc{Quantifiers, Methods of Proof}}
+\date{Independent review}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+\rule{\textwidth}{0.15em}
+\fontsize{12}{15}\selectfont
+\thispagestyle{empty}
+
+
+\section{Quantifiers}
+\begin{questions}
+\item Let P(x, y) denote some proposition involving x and y. For each statement below, either prove that the statement is correct or provide a counterexample if it is false.
+\begin{enumerate}[label=\alph*]
+\item $\forall$ x $\forall$ y P(x, y) $\implies$ $\forall$ y $\forall$ x P(x, y).
+\begin{solution}[20 mm]
+hi
+\end{solution}
+\item $\exists$ x $\exists$ y P(x, y) $\implies$ $\exists$ y $\exists$ x P(x, y).
+\vspace{20 mm}
+\item $\forall$ x $\exists$ y P(x, y) $\implies$ $\exists$ y $\forall$ x P(x, y).
+\vspace{20 mm}
+\item $\exists$ x $\forall$ y P(x, y) $\rightarrow$ $\forall$ y $\exists$ x P(x, y).
+\vspace{20 mm}
+\end{enumerate}
+\end{questions}
+\clearpage
+\section{Methods of Proof}
+\subsection{Contradiction and Contraposition}
+\begin{questions}
+\item Write the contrapositive of the following statements and, if applicable, the statement in mathematical notation. (Using quantifiers, etc.)
+\begin{enumerate}[label=\alph*]
+\item If a quadrilateral is not a rectangle, then it does not have two pairs of parallel sides. (Skip mathematical notation for this problem, just write the contrapositive)
+\HRule[25pt]
+\item For all natural numbers $a$ where $a^2$ is even, $a$ is even.
+\HRule[25pt]
+\item Negate this statement: For all integers $x$, there exists an integer $y$ such that $x^2 + y = 16$.
+\HRule[25pt]
+\end{enumerate}
+\item Prove or disprove: If $P \implies Q$ and $R \implies \lnot Q$, then $P \implies \lnot R$.
+\vspace{40 mm}
+\item For any integer $x$, $x^2$ has remainder 1 or 0 when divided by 3.
+\end{questions}
+\clearpage
+\section{Induction}
+\subsection{Questions}
+\begin{questions}
+\item What are the three simple steps of induction?
+\begin{enumerate}
+\item \HRule[35pt]
+\item \HRule[35pt]
+\item \HRule[35pt]
+\end{enumerate}
+\vspace{10 mm}
+\item Prove that $\Sigma_{i=0}^{n} i!*i = (n+1)! - 1$  for $n \geq 1$ where $n \in N$.
+\end{questions}
+\clearpage
+
+\section{More Practice}
+Use any method of proof to answer the following questions.
+\begin{questions}
+\item Let x be a positive real number. Prove that if $x$ is irrational (i.e., not a rational number), then $\sqrt{x}$ is also irrational.
+\vspace{80 mm}
+\item McDonald’s sells chicken McNuggets only in 6, 9, and 20 piece packages. This means that you cannot purchase exactly 8 pieces, but can purchase 15. The Chicken McNugget Theorem states that the largest number of pieces you cannot purchase is 43. Formally state the Chicken McNugget Theorem using quantifiers.
+\clearpage
+\item Prove or disprove the following statement: If $n$ is a positive integer such that $\frac{n}{3}$ leaves a remainder of 2, then $n$ is not a perfect square.
+\vspace{80 mm}
+\item In a large field, n people are standing so that for each person, the distances to every other person is different. At a given signal, each person fires a water pistol and hits the person who is closest to them. When n is odd, prove that there is at least one person who is left dry.
+\end{questions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
