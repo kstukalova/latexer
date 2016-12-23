@@ -1,0 +1,58 @@
+\documentclass{exam}
+\usepackage{../../scripts/commonheader}
+
+%%% Change these %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\discnumber{}
+\title{\textsc{Quantifiers, Methods of Proof}}
+\date{Independent review}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\rule{\textwidth}{0.15em}
+\fontsize{12}{15}\selectfont
+\thispagestyle{empty}
+
+%%% Include topics here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Induction}
+\subsection{Questions}
+\begin{questions}
+\subimport{../topics/proofs/induction/}{fib.tex}
+\subimport{../topics/proofs/induction/}{chocolate.tex}
+\end{questions}
+
+\section{Stable Marriage}
+\subsection{Introduction}
+\subimport{../topics/stable_marriage/}{text.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../topics/stable_marriage/}{lemma_term.tex}
+\subimport{../topics/stable_marriage/}{lemma_stable.tex}
+\subimport{../topics/stable_marriage/}{please.tex}
+\end{questions}
+
+\section{Well Ordering Principle}
+\subsection{Questions}
+\begin{questions}
+\subimport{../topics/wop/}{infimum.tex}
+\end{questions}
+
+\section{Optimal, Pessimal}
+\subsection{Introduction}
+\subimport{../topics/stable_marriage/}{opt_pess_text.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../topics/stable_marriage/}{male_opt.tex}
+\end{questions}
+
+\section{More Practice}
+\subsection{Questions}
+\begin{questions}
+\subimport{../topics/stable_marriage/}{global_ranking.tex}
+\end{questions}
+
+
+%%% Include topics here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
