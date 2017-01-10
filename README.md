@@ -18,3 +18,4 @@ TODO:
         - \P, \E, \var, \cov
 
 - [ ] META
+- [ ] VIDEOS????
