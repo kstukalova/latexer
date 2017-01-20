@@ -1,0 +1,59 @@
+\documentclass{exam}
+\usepackage{../../scripts/commonheader}
+
+%%% Change these %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\discnumber{4}
+\title{\textsc{Polynomials, Secret Sharing, Erasure Errors, General 
+Errors, Self Reference }}
+\date{October 3 to October 7, 2016}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\rule{\textwidth}{0.15em}
+\fontsize{12}{15}\selectfont
+\thispagestyle{empty}
+
+%%% Include topics here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Polynomials}
+\subsection{Introduction}
+\subimport{../../topics/polynomials/problems/}{facts.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/polynomials/problems/}{sequence.tex}
+\end{questions}
+
+\section{Erasure Errors}
+\subsection{Introduction}
+\subimport{../../topics/error_correction/erasure/problems/}{erasure_intro.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/error_correction/erasure/problems/}{basic_erasure.tex}
+\subimport{../../topics/error_correction/erasure/problems/}{send_n.tex}
+\end{questions}
+
+\section{General Errors}
+\subsection{Introduction}
+\subimport{../../topics/error_correction/general/problems/}{general_intro.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/error_correction/general/problems/}{message_calc.tex}
+\subimport{../../topics/error_correction/both/problems/}{count_errors.tex}
+\subimport{../../topics/secret_sharing/problems/}{astronauts.tex}
+\end{questions}
+
+\section{Secret Sharing}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/secret_sharing/problems/}{exam.tex}
+\subimport{../../topics/secret_sharing/problems/}{spies.tex}
+\end{questions}
+
+\section{Self Reference}
+\subsection{Introduction}
+\subimport{../../topics/self_reference/problems/}{intro.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/self_reference/problems/}{print_abc.tex}
+\end{questions}
+\end{document}

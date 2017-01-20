@@ -1,0 +1,67 @@
+\documentclass{exam}
+\usepackage{../../scripts/commonheader}
+
+%%% Change these %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\discnumber{3}
+\title{\textsc{Bijections, FLT, RSA, Polynomials, Secret Sharing}}
+\date{September 26 to September 30, 2016}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\rule{\textwidth}{0.15em}
+\fontsize{12}{15}\selectfont
+\thispagestyle{empty}
+
+%%% Include topics here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bijections}
+\subsection{Introduction}
+\begin{questions}
+\subimport{../../topics/bijections/problems/}{draw.tex}
+\subimport{../../topics/bijections/problems/}{describe.tex}
+\end{questions}
+\subimport{../../topics/bijections/problems/}{definitions.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/bijections/problems/}{bijections.tex}
+\subimport{../../topics/bijections/problems/}{injections.tex}
+\subimport{../../topics/bijections/problems/}{surjections.tex}
+\subimport{../../topics/bijections/problems/}{have_surjection.tex}
+\end{questions}
+
+\section{Fermat's Little Theorem}
+\subsection{Introduction}
+\subimport{../../topics/flt/problems/}{theorem.tex}
+\begin{questions}
+\subimport{../../topics/flt/problems/}{proof.tex}
+\end{questions}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/flt/problems/}{mod_math.tex}
+\subimport{../../topics/flt/problems/}{mod_math2.tex}
+\subimport{../../topics/flt/problems/}{mod_42.tex}
+\end{questions}
+
+\section{RSA}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/rsa/problems/}{rsa_math.tex}
+\subimport{../../topics/rsa/problems/}{break_rsa.tex}
+\subimport{../../topics/rsa/problems/}{coin_tosses.tex}
+\end{questions}
+
+\section{Polynomials}
+\subsection{Introduction}
+\subimport{../../topics/polynomials/problems/}{introduction.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/polynomials/problems/}{sequence.tex}
+\end{questions}
+
+\section{Secret Sharing}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/secret_sharing/problems/}{exam.tex}
+\subimport{../../topics/secret_sharing/problems/}{spies.tex}
+\end{questions}
+\end{document}

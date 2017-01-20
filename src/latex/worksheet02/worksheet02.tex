@@ -1,0 +1,71 @@
+\documentclass{exam}
+\usepackage{../../scripts/commonheader}
+
+%%% Change these %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\discnumber{2}
+\title{\textsc{Graphs, Trees, Hypercubes}}
+\date{September 12 to September 16, 2016}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\rule{\textwidth}{0.15em}
+\fontsize{12}{15}\selectfont
+\thispagestyle{empty}
+
+%%% Include topics here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Graph Theory}
+\subsection{Introduction}
+\begin{questions}
+\subimport{../../topics/graphs/problems/}{definitions.tex}
+\end{questions}
+
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/graphs/problems/}{3_cycle.tex}
+\subimport{../../topics/graphs/problems/}{ham_path.tex}
+\subimport{../../topics/graphs/problems/}{build_up_error.tex}
+\end{questions}
+
+\section{Eulerian Tour}
+\subsection{Introduction}
+\subimport{../../topics/graphs/problems/}{euler_definitions.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/graphs/problems/}{find_tour.tex}
+\subimport{../../topics/graphs/problems/}{even_degree.tex}
+\end{questions}
+
+\section{Trees}
+\subsection{Introduction}
+\subimport{../../topics/trees/problems/}{introduction.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/trees/problems/}{cycles_disconnect.tex}
+\subimport{../../topics/trees/problems/}{properties.tex}
+\subimport{../../topics/trees/problems/}{other_def.tex}
+\subimport{../../topics/trees/problems/}{rooted_tree.tex}
+\subimport{../../topics/trees/problems/}{spanning_connected.tex}
+\subimport{../../topics/trees/problems/}{spanning_trees.tex}
+\subimport{../../topics/trees/problems/}{k_3.tex}
+\end{questions}
+
+\section{Hypercubes}
+\subsection{Introduction}
+\subimport{../../topics/hypercubes/problems/}{introduction.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/hypercubes/problems/}{basics.tex}
+\subimport{../../topics/hypercubes/problems/}{even_cycle.tex}
+\subimport{../../topics/hypercubes/problems/}{coloring_hypercubes.tex}
+\end{questions}
+
+\section{Extra Practice}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/graphs/problems/}{longest_walk.tex}
+\subimport{../../topics/graphs/problems/}{same_degree.tex}
+\subimport{../../topics/graphs/problems/}{has_cycle.tex}
+\subimport{../../topics/graphs/problems/}{even_cycle.tex}
+\end{questions}
+\end{document}
