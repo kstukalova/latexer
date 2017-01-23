@@ -35,7 +35,18 @@ final:
 	cd latex/final && \
 	$(TEX) -output-directory=../../logs final.tex && \
 	cd ../../logs && \
-	if [ -d ../pdf/final ]; then mkdir ../pdf/final; fi && \
+	if [ -d ../pdf/final ]; then echo "file exists"; else mkdir ../pdf/final; fi && \
 	rm -r *.aux *.log *.out && \
-	mv final.pdf ../pdf/final
+	mv final.pdf ../pdf/final/
+
+# $(file) should be name of file
+# $(topic) should be where to find file
+walkthrough:
+	cd topics/$(topic)/walkthroughs && \
+	$(TEX) -output-directory=../../../logs $(file).tex && \
+	cd ../../../logs && \
+	rm -r *.aux *.log *.out && \
+	if [ -d ../pdf/resources/$(topic) ]; then echo "file exists"; else mkdir ../pdf/resources/$(topic); fi && \
+	mv $(file).pdf ../pdf/resources/$(topic)/
+
 
