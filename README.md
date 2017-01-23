@@ -14,4 +14,4 @@ Thing to create worksheets.
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE "Video Title")
 
-![Demo CountPages alpha](https://gifs.com/gif/creating-a-worksheet-nZXOBp)](https://www.youtube.com/watch?v=ZBJpvOMrpKQ&feature=youtu.be)
+![Demo CountPages alpha](https://j.gifs.com/nZXOBp.gif)](https://www.youtube.com/watch?v=ZBJpvOMrpKQ&feature=youtu.be)
