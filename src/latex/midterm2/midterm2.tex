@@ -27,409 +27,54 @@
 \section{FLT and RSA}
 \begin{questions}
 \subimport{.}{becoming_alice.tex}
+\subimport{.}{cracking_rsa.tex}
 \end{questions}
 
-% \item \textbf{Cracking RSA}\newline
-% Suppose Bob's RSA public key is $(e, n)$, where $e$ is the encryption key, and $n = pq$ is the product of two primes. Alice has just sent a secret message $c = m^e \mod n$ to Bob using Bob’s public key.
-% \begin{enumerate}[label=(\alph*)]
-
-% \item Explain how Bob can decrypt the message he has received.
-% \begin{solution}
-% $c^d \mod n = m^{ed} \mod n = m$
-% \end{solution}
-
-% \item Now suppose that by eavesdropping on their conversation you managed to overhear the ciphertext $c$. Moreover, when crafting his public key Bob foolishly chose primes that were too small, so that by continuously running a fast factoring algorithm on one of Berkeley’s supercomputing clusters for two weeks, you eventually manage to factor $n$, and recover $p$ and $q$. Given $e, p, q,$ and $c,$ explain how you can now efficiently recover plaintext $m$ of Alice's message to Bob.
-% \begin{solution}
-% Compute $d' = e-1 \mod (p-1)(q-1)$
-% Now you can compute $c^{d'} = m^{ed'} = m$
-% Note that all operations can be computed by the extended GCD algorithm which is polynomial time, and the exponentiation, also polynomial time.
-% \end{solution}
-
-% \end{enumerate}
-% \end{questions}
-
-% \section{Polynomials}
-% \begin{questions}
-% \item \textbf{Perfect Polynomial Proof Practice} \newline
-% Suppose $p$ is a prime number, $P(x)$ is a polynomial with degree $d$, and $0 < d < \frac{p}{2}$.
-% Prove that there are less than $2d +1$ distinct values of $x$ such that $P(x)^2 - P(x) +1 \equiv 0 \mod p$. 
-% \begin{solution}
-% Suppose for a contradiction that there are at least $2d + 1$ distinct values of $x$ such that $P(x)^2 − P(x) +1 \equiv 0 \mod p$. Then for each of those $x$-values, we have $P(x)^2 +1 \equiv P(x) \mod p$. So $P(x)$ and $P(x)^2 +1$ are two polynomials of degree at most $2d$ that match at $2d + 1$ points: so they are the same polynomial. But this is impossible, since they have different degrees.\newline
-
-% There is one case in which $P(x)$ and $P(x)^2 +1$ have the same degree, if $P(x) = a$ for some constant $a$. Does the equality hold $\mod p$ for this case? We have $a^2 − a + 1 = 0 \mod p$. This equation has no real solutions, let alone integer solutions $\mod p$ ! Therefore, we can state with confidence that no such $P(x)$ can exist.
-
-% \end{solution}
-
-% \item \textbf{Spot the Error}\newline
-% Assume that $d = 1$, and we are told that 
-% \begin{equation}
-% \begin{split}
-% P(1) &= 2 \\
-% P(2) &= 3 \\
-% P(3) &= 2 \\
-% P(4) &= 0  \\
-% p &= 5
-% \end{split}
-% \end{equation}
-% but we know there is exactly one incorrect point. 
-% \begin{enumerate}[label=(\alph*)]
-% \item What is $P(0)$? 
-% \begin{solution}
-% This is a line. Try deleting each and seeing whether a line fits the other three points. The line is $P(x) = x+1$, since 
-% \begin{equation}
-% \begin{split}
-% P(1) &= 1+1 = 2 \\
-% P(2) &= 2+1 = 3 \\
-% P(4) &= 4+1 = 0
-% \end{split}
-% \end{equation}
-% \end{solution}
-
-% \item What is the error locator polynomial for Berlekamp-Welsh Algorithm for this situation?
-% \begin{solution}
-% $E(x) = x-3$
-% \end{solution}
-
-% \end{enumerate}
-
-% \item \textbf{Majority Rules} \newline
-% Consider the following variant of the secret sharing problem. 
-% \begin{enumerate}[label=(\alph*)]
-% \item We wish to share a secret among twenty-one people, divided into three groups of seven.
-
-% \item A subset of the twenty-one people can recover the secret if and only if it contains majorities (4 or more out of 7) of at least two of the groups. 
-% \end{enumerate}
-% How would you modify the standard secret sharing scheme to achieve this condition? 
-% \begin{solution}
-% First, we have the secret $S$ as the constant term in a degree-1 polynomial $f(x) = ax + S$ over $GF(p)$, where $p > 7$. We hand out $f(1), f(2),$ and $f(3)$ to each of the three groups. Any two of these points is enough to recover $S$. 
-% Now we need to make $f(i)$ is only known to group $i$ a majority of group $i$ is present.
-% We hand out each $f(i)$ as a new secret within each group. For each group $i$, we have a polynomial $g_i$ of degree 3 such that $g_i(0) = f(i)$ (the standard secret sharing scheme). Then, we hand out $g_i(1), g_i(2), \dotsc , g_i(7)$ to each of the seven group members. Now, if any four members of a group get together, they can pool their values of $g_i$  to obtain $g_i(0) = f(i)$, which is their group’s secret. They can then share with another group (who also must have at least four people) to recover the original secret
-% \end{solution}
-
-% \item \textbf{The Polynomials Are Alright}\newline
-% Prove the following theorem in two different ways: \newline
-% For every prime $p$, every polynomial over $GF(p)$, even polynomials with degree $\geq p$, is equivalent to a polynomial of degree at most $p - 1$. (Two polynomials $f,g$ over $GF(p)$ are said to be equivalent iff $f(x) = g(x) \forall x \in GF(p)$.) 
-% \begin{enumerate}[label=(\alph*)]
-% \item Show how the theorem follows from Fermat's Little Theorem
-% \begin{solution}
-% From FLT, we know that for all $x$, $x^p = x \mod p$. Therefore, any $x^a$ where $a \geq p$ will be equivalent to $x^n$ for some $n \in {0, 1, \dotsc, p -1}$, and will have a degree at most $p-1$.
-% \end{solution}
-
-% \item Now prove the theorem using properties of polynomials.
-% \begin{solution}
-% Since a polynomial of degree $d$ is described completely by $d+1$ points, we cannot specify a polynomial of degree $\geq p$, because $p = 0$ over $GF(p)$, so $F(p) = F(0)$ for any polynomial $F$. So we can only specify at most $p$ unique points. As a result, every polynomial is equivalent to a polynomial of degree at most $p -1$.
-% \end{solution}
-
-% \end{enumerate}
-% \end{questions}
-
-% \section{Counting/Combinatorics}
-% \begin{questions}
-% \item \textbf{Midterm Madness}\newline
-% A professor designed his final exam as follows: There will be three sections in the exam. Each section has five questions. Students have to pick any two sections to answer, in any order. Within each section, they must choose any three questions. In how many possible ways can a student choose which questions to answer?
-% \begin{solution}
-% \[{3 \choose 2} * {5 \choose 3} * {5 \choose 3} \]
-% Choose which two sections to do, then choose which 3 problems to do for each of the two sections chosen.
-% \end{solution}
-
-% \item \textbf{Counting Cards}\newline
-% How many five card hands have at least one card from each suit?
-% \begin{solution}
-% Hand will be of this form: A B C D A where A, B, C, D are the suits.
-% First decide which suit will be repeated: ${4 \choose 1}$
-% Then get two cards from that suit: ${13 \choose 2}$
-% Finally select a card from each of the other suits: ${13 \choose 1}$
-% \[{4 \choose 1} {13 \choose 2} {13 \choose 1} {13 \choose 1}  {13 \choose 1} \]
-% \end{solution}
-
-% \item \textbf{Looking at Letters}\newline
-% How many letters are in the word MISSISSIPPI?
-% \begin{solution}
-% There are 11 letters in MISSISSIPPI
-% \end{solution}
-
-% \item \textbf{Total Triangles}\newline
-% How many triangles does a complete graph with $n$ nodes have?
-% \begin{solution}
-% ${n \choose 3}$
-% \end{solution}
-
-% \item \textbf{Interesting Integers}\newline 
-% How many different even integers $\geq 4000$ and $< 7000$ have four different digits? 
-% \begin{solution}
-% There are 3 choices for the thousands digit: 4, 5, 6 (can’t have 7)\newline
-% Split this into two cases: even (4, 6) and odd(5)\newline
-% If the thousands digit is even, then there are only 4 options for the ones digit (we can’t repeat the one we used for the thousands). Then there are $8*7$ options for the other digits. So we have $4*8*7*2$ even integers from 4000 to 7000 that start with 4 or 6 and have different digits.\newline
-% If the thousands is odd there are still 5 options for the ones digit. Everything else is the same.
-% So we get a total of: $4*8*7*2 + 5*8*7*1$
-
-% \end{solution}
-
-% \item \textbf{Fun with Jane} \newline
-% Plain Jane has 5 identical narrow rings that she likes to wear. She can wear them on any of her 8 fingers (but not her thumbs), and they are narrow enough that she can fit all 5 on one finger if she chooses to. 
-% \begin{enumerate}[label=(\alph*)]
-% \item  How many different ways can Jane wear her rings? (note that Jane’s rings may be plain, but she can tell her fingers apart). 
-% \begin{solution}
-% If she wears all 5 then there are ${12 \choose 7}$ ways for her to wear the rings. Think of this as stars and bars. Let the stars be the rings, and the bars be the partition between fingers. There are 5 stars (5 rings) and 7 bars (7 spaces between 8 fingers). So we get ${5+7 \choose 7}$.
-% If she changes how many she wears (0 to 5), then there are ${7+0 \choose 7} + {7+1 \choose 7} + \dotsc + {7+5 \choose 7}$ ways.
-% \end{solution}
-
-% \item If she puts at most one ring on each finger, how many ways are there for her to wear her rings? 
-% \begin{solution}
-% f she wears all of her rings then the answer is $8 \choose 5$ (she is choosing 5 fingers to place each ring on)
-% If she wears 0, 1, 2, 3, 4, or 5 rings, then there are ${8 \choose 0} + {8 \choose 1} + \dotsc + {8 \choose 5}$ ways.
-% \end{solution}
-
-% \item Suppose Jane is tired of being plain and paints her rings five different colors so she can tell them apart. How does this change your answers above? 
-% \begin{solution}
-% Multiply all previous answers by 5! (now we can differentiate between the rings).
-% \end{solution}
-% \end{enumerate}
-
-% \item Prove with a combinatorial argument: 
-% \[1 + 2 + \dotsc + n = \frac{n * (n + 1)}{2}\]
-% \begin{solution}
-% If we note 
-% \[\frac{n * (n + 1)}{2} = {n + 1 \choose 2}\]
-
-% that  , then we probably want to be selecting two things from a set of size $n + 1$. Both committees and bit strings can be made to work; we will use bit strings.\newline
-
-% Let us count the number of bit strings of length $n + 1$ with exactly 2 ones. One way is to choose the two positions for the 1s, out of the $n + 1$ possible positions. There are  
-% \[{n + 1 \choose 2} = \frac{n * (n + 1)}{2}\]
-
-% ways to do this. This gives the right hand side.\newline
-
-% For the left hand side, count the strings by the location of the first 1 (reading from left to right). If the first 1 is in the first position, then there are n choices for the second 1. If the first 1 is is second position, there are  $n − 1$ positions for the second 1, and so on till we get to the case where the first 1 is in position $n$, in which case the second 1 must be in the last position, so we have only one choice. This gives $n + (n - 1) + \dotsc + 1$, which is the same as $1 + 2 + \dotsc + n$.
-% \end{solution}
-
-% \end{questions}
-
-% \section{Self Reference}
-% \begin{questions}
-% \item \textbf{Equality for Every Fun}\newline
-% Two functions $f, g$ are equal by the following definition:
-% \[f, g: X \rightarrow Y \text{ and } f = g \iff \forall x \in X f(x) = g(x) \]
-% \begin{enumerate}[label=(\alph*)]
-% \item I want to define equality on the set of real, finite length, polynomial functions. Can I do this? Justify your answer.
-% \begin{solution}
-% This is possible. Since the polynomial representation of a function is unique and there are a finite number of coefficients, we can simply check the equality of the coefficients.
-% \end{solution}
-
-% \item I want to define equality on the set of single argument Python functions. Can I do this? Justify your answer.
-% \begin{solution}
-% This is not possible. Functions in Python represent general programs. Consider one function that immediately outputs 0 for all inputs, and another that outputs 0 if another program terminates on the input, and 1 if it does not terminate on the input. By the halting problem, we cannot know what the second program outputs, and so we cannot know if the two are equal on all inputs.
-% \end{solution}
-
-% \item What is, if anything, the difference between these two problems?
-% \begin{solution}
-% Python programs allow self reference, polynomials do not.
-% \end{solution}
-% \end{enumerate}
-
-% \item \textbf{Diagon Alley}\newline
-% Show that the halting problem reduces to the contradiction found in Cantor's diagonal argument.
-% \begin{solution}
-% We know the set of computer programs to be countable (they are finite length bit strings stored in memory). This allows us to enumerate all possible arguments to the TestHalt function (remember that the cartesian product of two countable sets is also countable by the spiral argument). We write this as a table with values representing whether TestHalt halts with the given inputs. Our constructed program Turing, which halts whenever TestHalt of $P$ applied to itself does not, must be in this enumeration. However, by its definition, it must have the opposite behavior on $P$ as TestHalt on $(P, P)$, inverting the diagonal of the table. This shows us that Turing cannot be in the table, and so TestHalt is not a valid program.
-
-% \end{solution}
-
-
-% \item \textbf{Floating Outside of Reality}\newline
-% Assume we have a computer with a finite number of infinite-precision floating point numbers, show, given a fixed starting state of the computer, that there exist real numbers we cannot calculate. How many such numbers are there?
-% \begin{solution}
-% Remember that the set of all programs is countable, since, in order to write them, they must be formed from a finite length sequence in some alphabet. Since the starting state of the computer is fixed, and each program maps the starting state to the final state of the computer, there is a countably infinite number of states we can reach. In order to have every real number be computable, we would have to have an uncountable infinity of states. Therefore it is impossible to calculate every real number.\newline
-% There must be an uncountable infinity of these numbers, since, as we have already reasoned, there is a countable infinity of calculable reals, so the set difference between the reals and the calculable reals must be uncountable (the union of the countable calculable reals and the incalculable reals must be uncountable, the union of two countable sets is countable).
-
-% \end{solution}
-
-% \end{questions}
-
-% \section{Probability}
-% \begin{questions}
-% \item \textbf{What Are the Chances}
-% \begin{enumerate}[label=(\alph*)]
-% \item Two disjoint events $A$ and $B$ with $Pr[A] > 0$ and $Pr[B] > 0$ cannot be independent. True or False?
-% \begin{solution}
-% True. $Pr[A \cap B] = 0$ which does not equal $Pr[A]Pr[B]$ if $Pr[A], Pr[B] > 0$. Therefore the disjoint events cannot be independent.
-% \end{solution}
-
-% \item There is a bag with 50 red and 50 blue balls. You pick four balls, without replacement. Given that the first ball is red, what is the probability that the fourth ball is also red?
-% \begin{solution}
-% $Pr[\text{4th ball is red}] = Pr[\text{2nd ball is red}] = 49/99$
-% \end{solution}
-
-% \item Let $\Omega = \{1,2,3,4,5,6\}$ be a uniform probability space. Find two independent events $A$ and $B$ with $0 < Pr[A] < 1$ and $0 < Pr[B] < 1$.
-% \begin{solution}
-% $A = \{2, 3, 4\}, B=\{1, 4\}.$\newline
-% $Pr[A] = \frac{3}{6}, Pr[B] = \frac{2}{6}, Pr[A \cap B] = \frac{1}{6}.$
-% \end{solution}
-
-% \item \textbf{Challenge:} Let $\Omega = \{1,2, \dotsc, n\}$ be a uniform probability space. Assume that $n$ is not a prime number. Find two independent events $A$ and $B$ with $0 < Pr[A] < 1$ and $0 < Pr[B] < 1$.
-% \begin{solution}
-% Since $n$ is not prime, we know $n=ab$ for some $a,b$. Let’s try what we did in 3, but generalize it. If $Pr[A] = \frac{a}{n}$ and $Pr[B] = \frac{b}{n}$. Then we want $Pr[A \cap B] = \frac{a*b}{n*n} = \frac{1}{n}$. So we want 1 overlapping point. Let $A=\{1, \dotsc, a\}$ and $B=\{a, \dotsc, a+b-1\}$. $|A| = a$, $|B| = b$, $|A \cap B|=1$, as desired.
-% \end{solution}
-% \end{enumerate}
-
-% \item \textbf{Losing My Marbles}
-% We have $n$ bins and $r$ red marbles, $g$ green marbles, and $b$ blue marbles. We randomly throw the $r +g+b$ marbles into the $n$ bins. 
-% \begin{enumerate}[label=(\alph*)]
-% \item What is the probability no bin contains two (or more) marbles? 
-% \begin{solution}
-% Let $k = r + g + b$
-% \[\frac{{n \choose k} * k!}{n^k}\]
-% \end{solution}
-
-% \item What is the probability no bin contains two marbles of the same color?
-% \begin{solution}
-% Let $k = r + g + b$
-% \[\frac{{n \choose r} * r!}{n^r} * \frac{{n \choose g} * g!}{n^g} * \frac{{n \choose b} * b!}{n^b} \]
-% \end{solution}
-
-% \end{enumerate}
-
-% \item \textbf{Rook at This}\newline
-% Given the chessboard below, imagine we place 7 rooks on random squares. What is the probability that all of these rooks are safe from each other? (No need to simplify!)
-
-% Note: If a rook is placed at square $(i,j)$, no pieces in column $j$ or row $i$ are “safe”. 
-% \begin{solution}
-% Consider the process of placing each rook on the board. When we place rook 1, we eliminate an entire row and an entire column, so we have effectively restricted the chessboard to a (disjoint) 7x7 board. Each time we add a piece, we lose a row/column. So after the 7th piece is placed, we have just a 1x1 board left. 
-
-% We can count the ways to set up such a scenario using the multiplication rule: 
-% \[N = 8^2 * 7^2 * 6^2 \dotsc * 2^2\]
-
-% The total number of ways we could have placed 7 pieces on a 64 square board is $D = {64 \choose 7} * 7!$ (since the order in which we place the rooks matters based on our process above). Our final answer is then $\frac{N}{D}$
-
-% \end{solution}
-
-% \begin{center}
-% \includegraphics{../images/chess.jpg}
-% \end{center}
-% \end{questions}
-
-
-
-% \section{Conditional}
-% \begin{questions}
-% \item \textbf{Probably Passing} A multiple choice quiz has 3 questions, each with 5 equally probably answer choices.
-% \begin{enumerate}[label=(\alph*)]
-% \item Find the probability of answering the first question correctly
-% \begin{solution}
-% \[Pr[getting 1 question right] = \frac{1}{5} = 0.2\]
-% \end{solution}
-
-% \item Find the probability of answering the two questions correctly
-% \begin{solution}
-% \[Pr[\text{getting 1 question right}] * Pr[\text{getting 1 question right}]\]
-% \[= \frac{1}{5} * \frac{1}{5} = 0.2*0.2 = 0.04\]
-% \end{solution}
-
-% \item  Find the probability of answering at least one question correctly
-% \begin{solution}
-% \[1 - (Pr[\text{getting 1 question wrong}])^3\]
-% \[= 1 - (\frac{4}{5}  * \frac{4}{5}  * \frac{4}{5} ) = 0.488\]
-% \end{solution}
-% \end{enumerate}
-
-% \item \textbf{Teach for the Stars}\newline
-%  You want to teach 61A! You will apply for some position every semester after taking the class. Once you have first finished the class, you have an 80\% chance to be hired as a Lab Assistant, a 10\% chance of being hired as a Tutor, and a 10\% chance of being hired as a TA. 
-
-% Once you have been a Lab Assistant, you have a 30\% chance of being rehired as a Lab Assistant, a 50\% chance of being hired as a Tutor, and a 20\% chance of being hired as a TA. 
-
-% Once you have been a Tutor, you have a 60\% chance of being rehired as a Tutor, and a 40\% chance of being hired as a TA. TAs are guaranteed to stay TAs forever when they are hired.
-
-% \begin{enumerate}
-% \item  What is the chance of being a Tutor on your second semester after finishing the class? (So you were either a Lab Assistant or a Tutor for one semester already)
-% \begin{solution}
-% \[0.8 * 0.5 + 0.1 * 0.6 = 0.46  \]
-% 	Chance of being a Tutor given you have been a Lab Assistant + chance of being a Tutor given you were hired as a Tutor on the first semester.
-% \end{solution}
-
-% \item What is the chance that you stay a Lab Assistant for all 7 semesters after taking the class? (don’t need to get the exact number)
-% \begin{solution}
-% \[0.8 * 0.3^6 = \text{about 4 in a million}\]
-% 		Student hired as LA after taking the class then keeps getting rehired as an LA
-% \end{solution}
-
-% \item Given you were hired as a Lab Assistant the first semester after taking the class, what is the chance that you stay a Tutor for all 6 remaining semesters?
-% \begin{solution}
-% \[\frac{0.8 * 0.5 * 0.6^5}{0.8} \]
-% 		Lab Assistant for the first semester and Tutor for the rest / Lab Assistant for the first semester
-% \end{solution}
-
-% \item What is the chance that you are hired as a Tutor exactly 3 times in 5 semesters?
-% \begin{solution}
-% \[0.8 * 0.3 * 0.5 * 0.6 * 0.6 +\]
-% \[0.8 * 0.5 * 0.6 * 0.6 * 0.4 +\]
-% \[0.5 * 0.6 * 0.6 * 0.4\]
-% Since you cannot be demoted, there are only 3 ways to be a Tutor exactly 3 times: LLTTT, LTTT TA, and TTT TA TA
-% \end{solution}
-
-% \item What is your chance of being a TA at least once in your first 3 semesters?
-% \begin{solution}
-% We have 1 - the chance that you aren’t a TA given that you weren’t a TA in the second semester, which is the probability of being a lab assistant twice + lab assistant + tutor, or a tutor twice, which is 
-% \[1- (0.8*0.3*0.8) + 1 - (0.8*0.5*0.6) + 1 - (0.1*0.6*0.6) = 0.532\]
-% \end{solution}
-% \end{enumerate}
-% \end{questions}
-
-
-% \section{Infinity and Countability}
-% \begin{questions}
-% \item \textbf{Countability Warmup}
-% \begin{enumerate}[label=(\alph*)]
-% \item Consider the set of all pairs of rational numbers: 
-% \[T_1 = {(x, y) | \text{ x,y rationals}}\]
-% Is $T_1$ finite, countably infinite, or uncountably infinite? Explain.
-% \begin{solution}
-% Countably infinite. 
-% Can use same proof that  NxN is countably infinite. (Cantor pairing)
-% \end{solution}
-
-% \item Consider the set of pairs where 
-% \[T_2 = {(x,y) | x \text{ is a natural number, }y \text{ is a real number}} \]
-% Is $T_2$ finite, countably infinite, or uncountably infinite? Explain.
-% \begin{solution}
-% Uncountably infinite. 
-% Use Cantor's Diagonalization on the second element.
-% \end{solution}
-
-% \item Consider the set of pairs where 
-% $T_3 = {(x,y) | x,y\text{ are bit strings of length }k}$
-% Is $T_3$ finite, countably infinite, or uncountably infinite? Explain.
-% \begin{solution}
-% Finite. Can count each one. How many are there?
-% \end{solution}
-
-% \item Consider the set of triples where 
-% \[T_4 = { (x,y,z) | x,y,z\text{ are rational numbers}}\]
-% Is $T_4$ finite, countably infinite, or uncountably infinite? Explain.
-% \begin{solution}
-% Countably infinite. From 1, know that $(x, y)$ is countably infinite. Use Cantor pairing to show $((x, y), z) \equiv (x, y ,z)$ is countably infinite.
-% \end{solution}
-% \end{enumerate}
-
-% \item \textbf{Countability Cooldown} \newline
-% Consider the set of lists of length $k$, for positive integer $k$, where 
-% \[T_5 = {(x_1, \dotsc, x_k)| x_i \in S_i\text{ such that }S_i  \neq \emptyset}.\]
-
-% \begin{enumerate}[label=(\alph*)]
-% \item If any of $S$ are uncountably infinite, what is the cardinality of $T_5$?
-% \begin{solution}
-% $T_5$ is uncountably infinite.
-% \end{solution}
-
-% \item If all of $S$ are finite, is $T_5$ finite, countably infinite, or uncountably infinite? 
-% \begin{solution}
-% $T_5$  is finite.
-% \end{solution}
-
-% \item If none of $S$ are uncountably infinite and at least one is infinite, what is the cardinality of $T_5$?
-% \begin{solution}
-% $T_5$ is countably infinite.
-% \end{solution}
-
-% \end{enumerate}
-% \end{questions}
+\section{Polynomials}
+\begin{questions}
+\subimport{.}{polynomial_practice.tex}
+\subimport{.}{spot_the_error.tex}
+\subimport{.}{majority_rules.tex}
+\subimport{.}{all_right.tex}
+\end{questions}
+
+\section{Counting/Combinatorics}
+\begin{questions}
+\subimport{.}{midterm_madness.tex}
+\subimport{.}{counting_cards.tex}
+\subimport{.}{looking_at_letters.tex}
+\subimport{.}{total_triangles.tex}
+\subimport{.}{integers.tex}
+\subimport{.}{jane.tex}
+\subimport{.}{combinatorics.tex}
+\end{questions}
+
+\section{Self Reference}
+\begin{questions}
+\subimport{.}{equality.tex}
+\subimport{.}{diagon_alley.tex}
+\subimport{.}{floating.tex}
+\end{questions}
+
+\section{Probability}
+\begin{questions}
+\subimport{.}{chances.tex}
+\subimport{.}{marbles.tex}
+\subimport{.}{rook.tex}
+\end{questions}
+
+\section{Conditional}
+\begin{questions}
+\subimport{.}{passing.tex}
+\subimport{.}{stars.tex}
+\end{questions}
+
+
+\section{Infinity and Countability}
+\begin{questions}
+\subimport{.}{warmup.tex}
+\subimport{.}{cooldown.tex}
+\end{questions}
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
