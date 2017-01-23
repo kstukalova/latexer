@@ -39,6 +39,23 @@ final:
 	rm -r *.aux *.log *.out && \
 	mv final.pdf ../pdf/final/
 
+midterm%_sol:
+	cd latex/midterm$(*) && \
+	$(TEX) -output-directory=../../logs midterm$(*).tex && \
+	$(TEX) $(DISC_TEX_FLAGS) -jobname="midterm$*_sol" "\def\discussionsolutions{}\input{midterm$*}" 
+	cd logs && \
+	if [ -d ../pdf/midterm$(*) ]; then echo "file exists"; else mkdir ../pdf/midterm$(*); fi && \
+	rm -r *.aux *.log *.out && \
+	mv midterm$(*)_sol.pdf ../pdf/midterm$(*)/
+
+midterm%:
+	cd latex/midterm$(*) && \
+	$(TEX) -output-directory=../../logs midterm$(*).tex && \
+	cd ../../logs && \
+	if [ -d ../pdf/midterm$(*) ]; then echo "file exists"; else mkdir ../pdf/midterm$(*); fi && \
+	rm -r *.aux *.log *.out && \
+	mv midterm$(*).pdf ../pdf/midterm$(*)/
+
 # $(file) should be name of file
 # $(topic) should be where to find file
 walkthrough:
