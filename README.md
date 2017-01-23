@@ -1,6 +1,44 @@
 # latexer
 Thing to create worksheets.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TODO:
 
 - [ ] how to (for mentors and coords)
