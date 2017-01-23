@@ -12,4 +12,6 @@ Thing to create worksheets.
 2. git checkout BRANCH
 3. Go to 
 
-![alt text](https://github.com/kstukalova/latexer/blob/master/scripts/setting_up.mov "Logo Title Text 1")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE "Video Title")
+
+![Demo CountPages alpha](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ZBJpvOMrpKQ&feature=youtu.be)
