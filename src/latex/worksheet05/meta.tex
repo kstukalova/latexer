@@ -1,44 +1,72 @@
-Week Specific Meta:
+\documentclass{exam}
+\usepackage{../../scripts/meta}
 
-Mandatory Questions:
-Berlekamp-Welsh: 
-Make sure students understand why the algorithm works
-Countability: 
-#1-3; 
-The set question
-If A and B are both countable, then AxB is countable. (True/False)
-Self Reference: 
-	Halting Problem Proof
-	All 3 exercises (for Mon-Wed people); As needed (for Thur-Fri people)
-Intro to Counting: 
-	Mon-Wed people will not get to this
-	Poker
-	Solving Equations
+%%% Change these %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\discnumber{4}
+\title{}
+\date{Berlekamp-Welsh, Countability, Self Reference, Counting}
 
-Topic/Questions Specific Notes:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\rule{\textwidth}{0.15em}
+\fontsize{12}{15}\selectfont
+\thispagestyle{empty}
 
-Berklekamp-Welsh:
 
-Countability:
-Make sure that students are familiar with the common sets (integers, rationals, etc.)
-The Hotel Argument 
-https://www.youtube.com/watch?v=6NlwpEArfwk&list=PL-XXv-cvA_iD8wQm8U0gG_Z1uHjImKXFy&index=13 
-this provides a good mechanism for explaining the intuition behind finding a bijection
+%%% General Notes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General Comments}
+\begin{questions}
+\item Berlekamp-Welsh: 
+\begin{itemize}
+\item Make sure students understand why the algorithm works
+\end{itemize}
+\item Countability: 
+\begin{itemize}
+\item \#1-3 
+\item The set question
+\item If A and B are both countable, then AxB is countable. (True/False)
+\end{itemize}
+\item Self Reference: 
+\begin{itemize}
+\item Halting Problem Proof
+\item All 3 exercises (for Mon-Wed people); As needed (for Thur-Fri people)
+\end{itemize}
+\item Intro to Counting: 
+\begin{itemize}
+\item Mon-Wed people will not get to this
+\item Poker
+\item Solving Equations
+\end{itemize}
+\item Countability
+\begin{itemize}
+\item Make sure that students are familiar with the common sets (integers, rationals, etc.)
+\item The Hotel Argument 
+\begin{itemize}
+\item \href{https://www.youtube.com/watch?v=6NlwpEArfwk&list=PL-XXv-cvA_iD8wQm8U0gG_Z1uHjImKXFy&index=13}{Video}
+\item this provides a good mechanism for explaining the intuition behind finding a bijection
 depending on the level of preparedness of your students you may or may not have to draw out the “hotels” on the board
-This is a good question to determine if they go to lecture
-Cantor-Bernstein Theorem:
-This theorem is not focused on (maybe not even really mentioned) in lecture, so the name and formal statement is just a neat thing to mention, BUT the technique that comes from it, namely the technique used to prove Qs countability, is very useful. Said technique states that if |A| ≤ |B| and |B| ≤ |A| then |A| = |B|.
-You can do a proof of why Q is countable here.
-We know that |N| ≤ |Q| because every natural number is a rational number.
-Just need to show that |Q| ≤ |N|.
-Feel free to do a short version of the spiral proof. They will probably go over this in lecture, but if they didn’t get it there you should cover it here. (Ask!)
+\end{itemize}
+\end{itemize}
+\item Self Reference
+\begin{itemize}
+\item Turing program question is typically included in notes, but can be confusing. Definitely want to make sure students understand why this proof makes sense. Second part of that first question is good to understand but not central to the concepts of self-reference/computability. For question 2, suggest that students try to use the program to solve the halting problem (which if it can proves that the program cannot exist.
+\end{itemize}
+\item Counting
+\begin{itemize}
+\item Definitely make sure to lecture on the rules of counting. Rather than just stating them, it will probably be better to do the examples with them in mind – it’s a lot easier to understand them when you get why they’re used
+\item Make sure to do the first one, as it emphasizes intuition of permutations vs. combinations, etc., and shouldn’t take too long
+\item Do the easier Starbucks counting ones to give them practice
+\item Solving equations-like stuff comes up decently often, so I definitely recommend going through that
+\end{itemize}
+\end{questions}
 
-Self-Reference:
-Turing program question is typically included in notes, but can be confusing. Definitely want to make sure students understand why this proof makes sense. Second part of that first question is good to understand but not central to the concepts of self-reference/computability. For question 2, suggest that students try to use the program to solve the halting problem (which if it can proves that the program cannot exist.
+\section{Questions}
+\subsection{Uncountability}
+\begin{enumerate}
+\subimport{../../topics/countability/meta/}{intro.tex}
+\end{enumerate}
 
-Intro to Counting:
-Definitely make sure to lecture on the rules of counting. Rather than just stating them, it will probably be better to do the examples with them in mind – it’s a lot easier to understand them when you get why they’re used
-Make sure to do the first one, as it emphasizes intuition of permutations vs. combinations, etc., and shouldn’t take too long
-Do the easier Starbucks counting ones to give them practice
-Solving equations-like stuff comes up decently often, so I definitely recommend going through that
+\end{document}
+
 

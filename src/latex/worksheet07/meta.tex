@@ -1,30 +1,51 @@
-Meta:
-	
-Required problems:
-	
-There is only one conditional probability question with four parts, the first three parts are mandatory, but the last one is optional. It will still take a good chunk of time though, be ready for that.
-For expectation and variance, all of the first problem in 3.1 are mandatory. Beyond that, for 2, 3, and 4, go through those in order finishing as many as you can.
-	
+\documentclass{exam}
+\usepackage{../../scripts/meta}
 
-Conditional Probability
-Make sure that your students are definitely confident with Bayes Rule and the Product Rule before continuing. 
-Emphasize that conditioning is really just changing the probability space that events are drawn from
-Can connect to normalization, i.e. want probability of all still relevant events to sum to 1, so divide by the total probability of the conditioned events 
-Show how independence decouples conditional probabilities 
-i.e. P(X|Y) ^ X 丄 Y ⇒ P(X|Y) = P(X)
-Basically this is saying that having Y gives no information about X, which is exactly what the above equation says.
-Expectation/Random Variables
-Talk about how RVs are functions of events to real numbers
-Why do we need random variables?
-Describe how functions of RVs are also RVs (e.g. X + Y = Z)
-Make sure that you write out the formal definition of expectation, it makes defining E[X^2] much easier to show.
-Show how to do E(f(X)) for a function f
-Do the proof for linearity of expectation
-Definitely do the True/False question
-Variance
-Make sure that students are comfortable with calculating E[X^2].
-Emphasize non-linearity
-Do the proof for why you need independence for splitting apart products
+%%% Change these %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\discnumber{7}
+\title{}
+\date{Random Variables, Conditional Probability, Distributions}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\rule{\textwidth}{0.15em}
+\fontsize{12}{15}\selectfont
+\thispagestyle{empty}
+
+
+%%% General Notes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General Comments}
+\begin{questions}
+\item There is only one conditional probability question with four parts, the first three parts are mandatory, but the last one is optional. It will still take a good chunk of time though, be ready for that.
+\item For expectation and variance, all of the first problem in 3.1 are mandatory. Beyond that, for 2, 3, and 4, go through those in order finishing as many as you can.
+\item Conditional Probability
+\begin{itemize}
+\item Make sure that your students are definitely confident with Bayes Rule and the Product Rule before continuing. 
+\item Emphasize that conditioning is really just changing the probability space that events are drawn from
+\item Can connect to normalization, i.e. want probability of all still relevant events to sum to 1, so divide by the total probability of the conditioned events 
+\item Show how independence decouples conditional probabilities 
+i.e. $P(X|Y) ^ X \perp Y \rightarrow P(X|Y) = P(X)$
+\item Basically this is saying that having Y gives no information about X, which is exactly what the above equation says.
+\end{itemize}
+\item Expectation/Random Variables
+\begin{itemize}
+\item Talk about how RVs are functions of events to real numbers
+\item \href{http://mathoverflow.net/questions/250500/why-do-we-need-random-variables}{Why do we need random variables?}
+\item Describe how functions of RVs are also RVs (e.g. $X + Y = Z$)
+\item Make sure that you write out the formal definition of expectation, it makes defining $\E[X^2]$ much easier to show.
+\item Show how to do $\E[f(X)]$ for a function $f$
+\item Do the proof for linearity of expectation
+\item Definitely do the True/False question
+\end{itemize}
+\item Variance
+\begin{itemize}
+\item Make sure that students are comfortable with calculating $\E[X^2]$.
+\item Emphasize non-linearity
+\item Do the proof for why you need independence for splitting apart products
+\end{itemize}
+\end{questions}
+
+\end{document}
 	
 

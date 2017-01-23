@@ -1,24 +1,70 @@
-Let students know that not everything will be covered during section. 
-Also remind them to check the piazza for solutions and walkthroughs!
-Polynomials
-Draw a picture to cover the rules in the box
-Good induction practice!!!
-Erasure Errors
-This should go fairly quickly
-THe first 4 questions (Before Exercises) are meant to be the lesson plan. Go over this together with the students
-First exercise problem is purely algebraic (Group 2 might want to skip)
-Second one is more: set up equation as (how many packets are sent)*(fraction packets not erased) = (number packets in original message)
-General Errors
-Solomon Reed just talks about how to encode the message.
-Basically just go over solomon reed on the board and then ask the questions in that section. Again, this is part of the lesson plan so go over these together
-Matrix view is something he talked about in lecture, it seemed random there though. Skip it.
-Berlekamp Welsh section is meant to walk through the intuition behind it. You can go over it together on the board and then ask students these questions to make sure they understand it. Again, Group 2 will probably be proficient in this so they can go to the exercises directly.
-First question is algebra (Group 2 skip): Give your students this solution to the linear system: b = 3, note that this is the index of the error, a3 = 1, a2 = 3, a1 = 3, a0 = 2
+\documentclass{exam}
+\usepackage{../../scripts/meta}
 
-Secret Sharing
-Figure out which of the schemes to use (polynomial facts, general errors?)
-IIIB	Halting -- MONDAY/TUES PEOPLE THEY HAVE NOT COVERED THIS YET
-I have literally no idea when he is going to cover this. Group 1 will definitely not have seen Self Reference Paradox before the meeting. If Group 1 finished the earlier section, ask them if they want to do Counting or Halting.
-If you choose to go over Halting:
-The first part of it is why halting is unsolvable, make sure they understand the paradox
-Then make sure they understand how to “reduce to the halting problem”. Go over the exercise together if they have never seen halting before
+%%% Change these %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\discnumber{3}
+\title{}
+\date{Polynomials, Secret Sharing, Erasure Errors, General Errors, Self Reference}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\rule{\textwidth}{0.15em}
+\fontsize{12}{15}\selectfont
+\thispagestyle{empty}
+
+
+%%% General Notes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General Comments}
+\begin{questions}
+\item Logistics
+\begin{itemize}
+\item Let students know that not everything will be covered during section. 
+\item Also remind them to check the piazza for solutions and walkthroughs!
+\end{itemize}
+\item Erasure Errors
+\begin{itemize}
+\item This should go fairly quickly
+\item THe first 4 questions (Before Exercises) are meant to be the lesson plan. Go over this together with the students
+\item First exercise problem is purely algebraic (Group 2 might want to skip)
+\end{itemize}
+
+\item General Errors
+\begin{itemize}
+\item Solomon Reed just talks about how to encode the message.
+\item Basically just go over solomon reed on the board and then ask the questions in that section. Again, this is part of the lesson plan so go over these together
+\item Matrix view is something he talked about in lecture, it seemed random there though. Skip it.
+\item Berlekamp Welsh section is meant to walk through the intuition behind it. You can go over it together on the board and then ask students these questions to make sure they understand it. Again, Group 2 will probably be proficient in this so they can go to the exercises directly.
+\item First question is algebra (Group 2 skip): Give your students this solution to the linear system: b = 3, note that this is the index of the error, a3 = 1, a2 = 3, a1 = 3, a0 = 2
+\end{itemize}
+
+\item Secret Sharing
+\begin{itemize}
+\item Figure out which of the schemes to use (polynomial facts, general errors?)
+\end{itemize}
+
+\item Halting -- MONDAY/TUES PEOPLE THEY HAVE NOT COVERED THIS YET
+\begin{itemize}
+\item I have literally no idea when he is going to cover this. Group 1 will definitely not have seen Self Reference Paradox before the meeting. If Group 1 finished the earlier section, ask them if they want to do Counting or Halting.
+\item If you choose to go over Halting:
+\item The first part of it is why halting is unsolvable, make sure they understand the paradox
+\item Then make sure they understand how to “reduce to the halting problem”. Go over the exercise together if they have never seen halting before
+\end{itemize}
+
+\end{questions}
+
+\section{Questions}
+\subsection{Polynomials}
+\begin{enumerate}
+\subimport{../../topics/polynomials/meta/}{facts.tex}
+\end{enumerate}
+
+\subsection{Erasure Errors}
+\begin{enumerate}
+\subimport{../../topics/error_correction/erasure/meta/}{send_n.tex}
+\end{enumerate}
+
+\end{document}
+
+
+
