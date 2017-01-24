@@ -1,6 +1,10 @@
 # latexer
 Thing to create worksheets.
 
+# Overall Structure
+
+![alt text](https://github.com/kstukalova/latexer/blob/master/scripts/x.pdf "Logo Title Text 1")
+
 # Setting up your machine
 1. Create a directory.
 2. git clone https://github.com/kstukalova/latexer.git
