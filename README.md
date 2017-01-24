@@ -13,3 +13,8 @@ Thing to create worksheets.
 3. Go to 
 
 ![Demo CountPages alpha](https://j.gifs.com/nZXOBp.gif)](https://www.youtube.com/watch?v=ZBJpvOMrpKQ&feature=youtu.be)
+
+
+# Adding a question (and meta)
+
+![Demo CountPages alpha](https://j.gifs.com/mw6yLR.gif)](https://www.youtube.com/watch?v=ZBJpvOMrpKQ&feature=youtu.be)
