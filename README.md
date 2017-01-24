@@ -3,7 +3,9 @@ Thing to create worksheets.
 
 # Overall Structure
 
-![alt text](https://github.com/kstukalova/latexer/blob/master/scripts/x.pdf "Logo Title Text 1")
+![GitHub Logo](https://github.com/kstukalova/latexer/blob/master/scripts/x.pdf)
+
+![Image](scripts/x.pdf?raw=true)
 
 # Setting up your machine
 1. Create a directory.
