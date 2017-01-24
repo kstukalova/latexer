@@ -13,6 +13,7 @@ Thing to create worksheets.
 3. Go to latex and create worksheetXX directory
 4. Inside new directory create Latex files called meta.tex and worksheetXX.tex
 5. Copy from an existing worksheet.
+5. Update the date, title, worksheet number.
 6. Go back to src and type make worksheetXX. This will generate meta.pdf and worksheetXX.pdf in src/pdf/worksheetXX/.
 
 ![Demo CountPages alpha](https://j.gifs.com/nZXOBp.gif)](https://youtu.be/9_qXN9onpmc)
@@ -37,3 +38,19 @@ Thing to create worksheets.
 
 # Tips
 * Pattern match always.
+* Special commands:
+  * \texttt{} will create programming text
+  * \lstlisting will create a block of programming text
+  * Special symbols (inside math environment)
+    * \P
+    * \E
+    * \var
+    * \cov
+  * How to make boxes:
+    * \fbox{\begin{minipage}{16.3cm}
+    * CONTENT GOES HERE
+    * \end{minipage}}
+* Naming conventions:
+  * Always create worksheet directories as worksheetXY where X,Y are in [0, 9]
+  * Put images in same folder as the problem they are used in. Name them the same name as the problem.
+ 
