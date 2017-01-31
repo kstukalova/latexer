@@ -62,3 +62,4 @@ Thing to create worksheets.
     * Remove \\ after each line
   * If make all isn’t working try doing “make worksheetXX” for the worksheet that doesn’t compile and then do make all
  
+>>>>>>> 01087e9e8e9521b038c76c0dbcd0d67df9fe78a4
