@@ -1,6 +1,10 @@
 # latexer
 Thing to create worksheets.
 
+# Overall Structure
+
+![Image](scripts/x.pdf?raw=true)
+
 # Setting up your machine
 1. Create a directory.
 2. git clone https://github.com/kstukalova/latexer.git
@@ -53,4 +57,9 @@ Thing to create worksheets.
 * Naming conventions:
   * Always create worksheet directories as worksheetXY where X,Y are in [0, 9]
   * Put images in same folder as the problem they are used in. Name them the same name as the problem.
+* Common errors and debugging:
+  * Replace tabu with \fbox{\begin{minipage}{16.3cm} CONTENT \end{minipage}}
+    * Remove \\ after each line
+  * If make all isn’t working try doing “make worksheetXX” for the worksheet that doesn’t compile and then do make all
  
+>>>>>>> 01087e9e8e9521b038c76c0dbcd0d67df9fe78a4

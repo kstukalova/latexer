@@ -24,7 +24,7 @@ WKSHT = $(MAKECMDGOALS)
 worksheet%: 
 	cd latex/worksheet$(*) && \
 	$(TEX) -output-directory=../../logs worksheet$(*).tex && \
-	$(TEX) -output-directory=../../logs meta.tex && \
+	#$(TEX) -output-directory=../../logs meta.tex && \
 	cd ../../logs && \
 	rm -r *.aux *.log *.out && \
 	if [ -d ../pdf/worksheet$(*) ]; then echo "file exists"; else mkdir ../pdf/worksheet$(*); fi && \
