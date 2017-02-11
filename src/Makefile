@@ -13,7 +13,7 @@ all: $(ALL_WKSHT) $(addsuffix _sol, $(ALL_WKSHT))
 # generate the solutions doc (in ../pdf)
 worksheet%_sol:
 	cd latex/worksheet$(*) && \
-	$(TEX) $(DISC_TEX_FLAGS) -jobname="worksheet$*_sol" "\def\discussionsolutions{}\input{worksheet$*}" 
+	$(TEX) $(DISC_TEX_FLAGS) -jobname="worksheet$*_sol" "\def\discussionsolutions{}\input{worksheet$*}"
 	cd logs && \
 	if [ -d ../pdf/worksheet$(*) ]; then echo "file exists"; else mkdir ../pdf/worksheet$(*); fi && \
 	mv *.pdf ../pdf/worksheet$(*) && \
@@ -21,7 +21,7 @@ worksheet%_sol:
 
 # generate the actual worksheets
 WKSHT = $(MAKECMDGOALS)
-worksheet%: 
+worksheet%:
 	cd latex/worksheet$(*) && \
 	$(TEX) -output-directory=../../logs worksheet$(*).tex && \
 	$(TEX) -output-directory=../../logs meta.tex && \
@@ -42,7 +42,7 @@ final:
 midterm%_sol:
 	cd latex/midterm$(*) && \
 	$(TEX) -output-directory=../../logs midterm$(*).tex && \
-	$(TEX) $(DISC_TEX_FLAGS) -jobname="midterm$*_sol" "\def\discussionsolutions{}\input{midterm$*}" 
+	$(TEX) $(DISC_TEX_FLAGS) -jobname="midterm$*_sol" "\def\discussionsolutions{}\input{midterm$*}"
 	cd logs && \
 	if [ -d ../pdf/midterm$(*) ]; then echo "file exists"; else mkdir ../pdf/midterm$(*); fi && \
 	rm -r *.aux *.log *.out && \
@@ -65,5 +65,3 @@ walkthrough:
 	rm -r *.aux *.log *.out && \
 	if [ -d ../pdf/resources/$(topic) ]; then echo "file exists"; else mkdir ../pdf/resources/$(topic); fi && \
 	mv $(file).pdf ../pdf/resources/$(topic)/
-
-
