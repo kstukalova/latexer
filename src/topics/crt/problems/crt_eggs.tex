@@ -1,1 +1,11 @@
 \question The supermarket has a lot of eggs, but the manager is not sure exactly how many he has. When he splits the eggs into groups of 5, there are exactly 3 left. When he splits the eggs into groups of 11, there are 6 left. What is the minimum number of eggs at the supermarket?
+\begin{solution}[1.5 in]
+\begin{align*}
+x&=1(mod  5) & y&=0(mod  5) \\
+x &= 0 (mod  11) & y &= 1 (mod  11) \\
+x &= 11p’ (mod  55) & y &= 5q’ (mod  55) \\
+p’ &= 11^{-1} (mod  5) & y &= 5^{-1} (mod  11) \\
+p’ &= 1 (mod  5) & y &= 9 (mod  11) \\
+\end{align*}
+$x = 3 * 1 + 9 * 11 = 102 (mod  55)$ \\
+\end{solution}
