@@ -3,8 +3,8 @@
 
 %%% Change these %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \discnumber{4}
-\title{\textsc{RSA, Secret Sharing, Erasure Errors}}
-\date{October 3 to October 7, 2016}
+\title{\textsc{RSA, Polynomails, Secret Sharing, Erasure Errors}}
+\date{Feb 20 to Feb 27, 2017}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -14,12 +14,28 @@
 \thispagestyle{empty}
 
 %%% Include topics here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{RSA}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/rsa/problems/}{rsa_math.tex}
+\subimport{../../topics/rsa/problems/}{break_rsa.tex}
+\subimport{../../topics/rsa/problems/}{coin_tosses.tex}
+\end{questions}
+
+
 \section{Polynomials}
 \subsection{Introduction}
 \subimport{../../topics/polynomials/problems/}{facts.tex}
 \subsection{Questions}
 \begin{questions}
 \subimport{../../topics/polynomials/problems/}{sequence.tex}
+\end{questions}
+
+\section{Secret Sharing}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/secret_sharing/problems/}{exam.tex}
+\subimport{../../topics/secret_sharing/problems/}{spies.tex}
 \end{questions}
 
 \section{Erasure Errors}
@@ -31,11 +47,5 @@
 \subimport{../../topics/error_correction/erasure/problems/}{send_n.tex}
 \end{questions}
 
-\section{Secret Sharing}
-\subsection{Questions}
-\begin{questions}
-\subimport{../../topics/secret_sharing/problems/}{exam.tex}
-\subimport{../../topics/secret_sharing/problems/}{spies.tex}
-\end{questions}
 
 \end{document}
