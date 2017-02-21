@@ -3,8 +3,13 @@
 
 %%% Change these %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \discnumber{4}
+<<<<<<< HEAD
 \title{\textsc{RSA, Polynomials, Secret Sharing, Erasure Errors }}
 \date{October 3 to October 7, 2016}
+=======
+\title{\textsc{RSA, Polynomails, Secret Sharing, Erasure Errors}}
+\date{Feb 20 to Feb 27, 2017}
+>>>>>>> 22533c7d21943ab5cf7eb8216fc1ddf5e45c7949
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -14,14 +19,15 @@
 \thispagestyle{empty}
 
 %%% Include topics here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Polynomials}
-\subsection{Introduction}
-\subimport{../../topics/polynomials/problems/}{facts.tex}
+\section{RSA}
 \subsection{Questions}
 \begin{questions}
-\subimport{../../topics/polynomials/problems/}{sequence.tex}
+\subimport{../../topics/rsa/problems/}{rsa_math.tex}
+\subimport{../../topics/rsa/problems/}{break_rsa.tex}
+\subimport{../../topics/rsa/problems/}{coin_tosses.tex}
 \end{questions}
 
+<<<<<<< HEAD
 \section{Secret Sharing}
 \subsection{Questions}
 \begin{questions}
@@ -58,3 +64,32 @@
 % \subimport{../../topics/self_reference/problems/}{print_abc.tex}
 % \end{questions}
 \end{document}
+=======
+
+\section{Polynomials}
+\subsection{Introduction}
+\subimport{../../topics/polynomials/problems/}{facts.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/polynomials/problems/}{sequence.tex}
+\end{questions}
+
+\section{Secret Sharing}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/secret_sharing/problems/}{exam.tex}
+\subimport{../../topics/secret_sharing/problems/}{united_nations.tex}
+\end{questions}
+
+\section{Erasure Errors}
+\subsection{Introduction}
+\subimport{../../topics/error_correction/erasure/problems/}{erasure_intro.tex}
+\subsection{Questions}
+\begin{questions}
+\subimport{../../topics/error_correction/erasure/problems/}{basic_erasure.tex}
+\subimport{../../topics/error_correction/erasure/problems/}{send_n.tex}
+\end{questions}
+
+
+\end{document}
+>>>>>>> 22533c7d21943ab5cf7eb8216fc1ddf5e45c7949
