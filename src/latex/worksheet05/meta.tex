@@ -17,6 +17,14 @@
 %%% General Notes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{General Comments}
 \begin{questions}
+\item General Errors
+\begin{itemize}
+	\item Solomon Reed just talks about how to encode the message.
+	\item Basically just go over solomon reed on the board and then ask the questions in that section. Again, this is part of the lesson plan so go over these together
+	\item Matrix view is something he talked about in lecture, it seemed random there though. Skip it.
+	\item Berlekamp Welsh section is meant to walk through the intuition behind it. You can go over it together on the board and then ask students these questions to make sure they understand it. Again, Group 2 will probably be proficient in this so they can go to the exercises directly.
+	\item First question is algebra (Group 2 skip): Give your students this solution to the linear system: b = 3, note that this is the index of the error, a3 = 1, a2 = 3, a1 = 3, a0 = 2
+\end{itemize}
 \item Berlekamp-Welsh: 
 \begin{itemize}
 \item Make sure students understand why the algorithm works
@@ -30,8 +38,11 @@
 \end{itemize}
 \item Self Reference: 
 \begin{itemize}
-\item Halting Problem Proof
-\item All 3 exercises (for Mon-Wed people); As needed (for Thur-Fri people)
+  \item Take time to be very clear about the programs we are talking about: TestHalt/Turing.
+  \item It might be helpful to draw out a flow chart to show how Turing(Turing) fails.
+  \item The key idea is that the existence of TestHalt is not possible (proof by contradiction), Turing generates this contradiction.
+  \item The equivalence between this and Cantor's diagonalization argument is again a bit tricky, try drawing it out in a table of (L)oop/(H)alt.
+  \item This relatively simple (if confusing) proof has huge implications. You might want to take some time to discuss what these are. It (like the related incompleteness theorems by G\"odel) but a limit on what we can know. We cannot generate arbitrary programs, and this gives a powerful tool (through the idea of reduction) to prove which programs are impossible.
 \end{itemize}
 \item Intro to Counting: 
 \begin{itemize}
@@ -70,6 +81,8 @@ depending on the level of preparedness of your students you may or may not have 
 \begin{enumerate}
 \subimport{../../topics/countability/meta/}{intro.tex}
 \end{enumerate}
+
+\section{
 
 \end{document}
 
