@@ -1,7 +1,12 @@
-\question Find an integer x such that x is congruent to $3 \mod 4$ and $5 \mod 9$.
+\question Find an integer $x$ such that $x$ is congruent to $3 \mod 4$ and $5 \mod 9$.
 \begin{solution}[1 in]
-One way is to find a number that is $1 \mod 4$ and $0 \mod 9$. \newline
-To do that, we need to have $9x = 1 (\mod 4)$, which works when $x = 1$, so the number is 9. \newline
-We do the same with $0 \mod 4$ and $1 \mod 9$, so $4x = 1 (\mod 9)$. This yields $x = 7$, or 28. \newline
-Our answer is then $3 * 9 + 5 * 28 (\mod 36)$.
+In general if $x$ can be expressed as 
+\begin{align*}
+    x &\equiv a_1 \pmod m_1 \\ 
+    x &\equiv a_2 \pmod m_2
+\end{align*}
+where $m_1$ and $m_2$ are relatively prime to each other, CRT tells us that there is an unique number mod $m_1m_2$ that satisfies this equation. 
+
+Since $m_1$ and $m_2$ are relatively prime, we can, using Euclid's algorithm, write an equation of the form 
+\[ 1 = (m_1^{-1} \pmod ) \]
 \end{solution}
