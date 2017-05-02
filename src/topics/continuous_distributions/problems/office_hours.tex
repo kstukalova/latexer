@@ -5,8 +5,11 @@ is the expected value of the sum of the time they wait in hours and
 their score on the exam?
 
 \begin{solution}[0.5cm]
-\E(waiting time) = \E(exp(lambda=8/24)) = 3 \\
+Since the student and the office hours lie on the same distribution, there is no
+difference between when the student comes and when the office hours are held. So
+
+\E(waiting time) = \E(exp(lambda=9/24)) = 8/3 \\
 \E(score) = \E(normal(50, 36)) = 50 \\
-By linearity of expectation, the sum is 53.
+By linearity of expectation, the sum is $52 \frac{2}{3}$.
 \end{solution}
  
